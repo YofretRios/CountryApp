@@ -9,13 +9,33 @@ body {
   background-color: #F3F4F6;
 }
 
+// Reset default paddings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
 .container {
   width: 100%;
+  padding: 1rem 0;
   margin-left: auto;
   margin-right: auto;
 
   @include respond-to("dt") {
     max-width: 640px;
+  }
+}
+
+.bounce {
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.03);
   }
 }
 

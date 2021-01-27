@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
-import Card from './Card';
+import { renderRoutes } from 'react-router-config';
+import { withRouter } from 'react-router-dom';
+import Routes from '../routes';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="header">
-          <div>
-            <h1 className="title">CountryApp</h1>
-          </div>
-        </header>
-
-        <div className="container">
-          <Card />
-
-          <Card />
-        </div>
+        {renderRoutes(Routes)}
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
