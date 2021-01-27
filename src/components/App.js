@@ -5,12 +5,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Start Clean Project</h1>
+        <header className="header">
+          <div>
+            <h1 className="title">CountryApp</h1>
+          </div>
         </header>
 
-        <Card />
-        <Card />
+        <div className="container">
+          <Card />
+
+          <Card />
+        </div>
       </div>
     );
   }

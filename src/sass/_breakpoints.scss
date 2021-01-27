@@ -1,4 +1,5 @@
 /*** [break points] ***/
+// Mobile first breakpoints
 $breakpoints: (
   'xs': (min-width: 360px), /* smallest supported break point */
   'sm': (min-width: 550px), /* mobile */
