@@ -23,9 +23,18 @@ const getCountryByNameSuccess = createAction('GET_COUNTRY_BY_NAME_SUCCESS');
 const getCountryByNameError = createAction('GET_COUNTRY_BY_NAME_ERROR');
 const getCountryByName = createAction('GET_COUNTRY_BY_NAME', (payload) => async (dispatch) => {
   try {
-    const { data } = await getByName(payload.name);
+    let response = [];
 
-    dispatch(getCountryByNameSuccess(data));
+    /**
+     * get all countries if no search field is passed to the action
+     */
+    if (payload.name !== '') {
+      response = await getByName(payload.name);
+    } else {
+      response = await getAll();
+    }
+
+    dispatch(getCountryByNameSuccess(response.data));
   } catch (ex) {
     dispatch(getCountryByNameError(ex.message));
   }
@@ -41,24 +50,43 @@ export const actions = {
 */
 const defaultState = {
   list: [],
-  selectedCountry: null
+  selectedCountry: null,
+  loading: false,
+  error: null,
+  searchError: null
 };
 
 const reducer = handleActions({
   [getAllCountries]: (state) => ({
     ...state,
     loading: true,
-    error: null,
+    error: null
   }),
   [getAllCountriesError]: (state, action) => ({
     ...state,
     loading: false,
-    error: action.payload,
+    error: action.payload
   }),
   [getAllCountriesSuccess]: (state, action) => ({
     ...state,
     loading: false,
-    list: action.payload
+    list: action.payload,
+    error: null
+  }),
+  [getCountryByName]: (state) => ({
+    ...state,
+    loading: true
+  }),
+  [getCountryByNameError]: (state, action) => ({
+    ...state,
+    loading: false,
+    searchError: action.payload
+  }),
+  [getCountryByNameSuccess]: (state, action) => ({
+    ...state,
+    loading: false,
+    list: action.payload,
+    searchError: null
   })
 }, defaultState);
 

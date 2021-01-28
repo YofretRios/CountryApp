@@ -1,5 +1,6 @@
 @import './variables';
 @import './breakpoints';
+@import './.loader';
 @import './card';
 
 body {
@@ -20,6 +21,36 @@ p {
   margin: 0;
 }
 
+input {
+  border: 2px solid;
+  border-color: #D1D5DB;
+  appearance: none;
+  background-color: #fff;
+  padding-top: 0.5rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.75rem;
+  border-radius: 0.375rem;
+
+  &.w-full {
+    width: 100%;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #2563eb;
+  }
+
+  &.error {
+    border-color: #F87171;
+    background-color: #FEE2E2;
+
+    &:focus {
+      border-color: #F87171
+    }
+  }
+}
+
 .container {
   width: 100%;
   padding: 1rem 0;
@@ -29,6 +60,16 @@ p {
   @include respond-to("dt") {
     max-width: 640px;
   }
+}
+
+.input-container {
+  padding: 0 1rem 1rem 1rem;
+  position: relative;
+}
+
+.error-hint {
+  margin-top: 0.3rem;
+  color: #F87171;
 }
 
 .bounce {

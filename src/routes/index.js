@@ -5,13 +5,13 @@ const Routes = [
   {
     path: '/',
     component: CountryList,
-    exact: true,
+    exact: true
   },
   {
-    path: '/:name',
+    path: '/:alphacode',
     component: CountryProfile,
-    exact: true,
-  },
+    exact: true
+  }
 ];
 
 export default Routes;
