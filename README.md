@@ -1,5 +1,20 @@
 # Firstleaf Take Home Project
 
+### Installation
+```shell
+$ npm install o yarn
+```
+
+### Development
+```shell
+$ npm server or yarn serve
+```
+
+### Deploy
+```shell
+$ npm build or yarn build
+```
+
 ## Intro
 Today, we're going to construct a country of the world app!  This assignment allows you to demonstrate your experience with ReactJS and CSS.
 

@@ -18,7 +18,7 @@ const CountryList = () => {
   const [search, setSearch] = useState('');
 
   /**
-   * Debounce Redux action, to avoid too many functions calls and store updates
+   * Debounce Redux action to avoid too many functions calls and store updates
    */
   const debounceQuery = useCallback(debounce((value) => {
     dispatch(actions.getCountryByName({ name: value }));
