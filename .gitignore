@@ -8,3 +8,6 @@
 
 # Ignore npm's lockfile
 package-lock.json
+
+# Ignore eslint cache
+.eslintcache
