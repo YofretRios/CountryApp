@@ -29,11 +29,15 @@ const Country = () => {
   if (error) {
     return (
       <div className="container center">
-        <h2>No country data found</h2>
+        <h2 className="error-message">Aww Snap, We couldn't find the country you were looking for</h2>
+        <Link to='/'>Return to home</Link>
       </div>
     );
   }
 
+  /**
+   * Show Loading message based on store flag
+   */
   if (loading || !data) {
     return (
       <div className="container center">

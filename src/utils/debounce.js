@@ -1,4 +1,10 @@
-// Using timeout to implement a debounce function
+/**
+ * Creates a debounced function that delays invoking func until after wait milliseconds have elapsed
+ * since the last time the debounced function was invoked.
+ * @param {function} func
+ * @param {Number} wait
+ * @param {boolean} immediate
+ */
 const debounce = (func, wait, immediate) => {
   let timeout;
 

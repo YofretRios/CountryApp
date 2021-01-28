@@ -42,7 +42,7 @@ const CountryList = () => {
     <>
       <header className="header">
         <div>
-          <h1 className="title">CountryApp</h1>
+          <h1 className="title">Countries</h1>
         </div>
       </header>
 

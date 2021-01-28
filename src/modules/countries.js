@@ -25,12 +25,12 @@ const getCountryByName = createAction('GET_COUNTRY_BY_NAME', (payload) => async 
   try {
     let response = [];
 
-    /**
-     * get all countries if no search field is passed to the action
-     */
     if (payload.name !== '') {
       response = await getByName(payload.name);
     } else {
+    /**
+     * get all countries if no search field is passed to the action
+     */
       response = await getAll();
     }
 
@@ -50,7 +50,6 @@ export const actions = {
 */
 const defaultState = {
   list: [],
-  selectedCountry: null,
   loading: false,
   error: null,
   searchError: null

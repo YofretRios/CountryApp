@@ -10,7 +10,7 @@ $ npm install o yarn
 $ npm server or yarn serve
 ```
 
-### Deploy
+### Build
 ```shell
 $ npm build or yarn build
 ```
