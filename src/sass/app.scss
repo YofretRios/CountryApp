@@ -1,7 +1,8 @@
 @import './variables';
 @import './breakpoints';
-@import './.loader';
+@import './loader';
 @import './card';
+@import './countryProfile';
 
 body {
   margin: 0;
@@ -59,6 +60,10 @@ input {
 
   @include respond-to("dt") {
     max-width: 640px;
+  }
+
+  &.center {
+    text-align: center;
   }
 }
 

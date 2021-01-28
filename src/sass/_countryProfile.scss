@@ -1,0 +1,70 @@
+.country-profile {
+  overflow: hidden;
+  border-bottom: 1px solid #E5E7EB;
+
+  @include respond-to("dt") {
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    margin-bottom: 1rem;
+  }
+}
+
+.country-profile-header {
+  padding: 1.25rem 1.5rem;
+  background-color: #FFF;
+
+  p {
+    margin-top: 0.5rem;
+    color: #6B7280;
+  }
+}
+
+.country-profile-body {
+  border-top: 1px solid #E5E7EB;
+
+  dl {
+    margin: 0;
+  }
+}
+
+.country-profile-row {
+  padding: 1.25rem 1.5rem;
+
+  dt {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #6B7280;
+  }
+
+  dd {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: #111827;
+    margin: 0.5rem 0 0;
+
+    img {
+      height: 40px;
+    }
+  }
+
+  &:nth-child(even) {
+    background-color: #FFF;
+  }
+
+  @include respond-to("dt") {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    dd {
+      grid-column: span 2 / span 2;
+      margin: 0;
+    }
+  }
+}
+
+.country-profile-borders {
+  margin:0;
+  padding: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
